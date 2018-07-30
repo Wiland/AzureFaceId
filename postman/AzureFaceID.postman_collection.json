@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "774c5e32-056f-4d95-b793-c7c671d9ad6d",
+		"name": "AzureFaceID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "b68524c3-0f57-4a84-aaef-c9532c2ccc41",
+			"name": "Drive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b169bd82-06c1-40d8-a100-afcbf9c82498",
+			"name": "Face Detect",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\": \"https://lh3.googleusercontent.com/RvRFaZL9jVNn2NyVug0XXzqkkzj5nkkmbYb8Jft_wZml3-BT9ZBFvByltOvE-_5zrOuJ-AkG-u64rAB595gBkdcdL-WQY0-awFIAWsWQyDeYcqqH_aWprt9VcilRzjaxK9jS_cOWjNWeoohLy7vjCgUQOTK2i57YeEwVVnnzzKIwRrZkuDgi-p_OFxFJUnYrZLTekpOIeYhApTb_UWfEec2E9u06dxGvVf_-LGYlcWVOnolnyYTdIC7LxC-q1vBkpaNIPon43Ji96HWLYkR0qD02TVibNvCrHSQquXLVgNhQA0xNzJE7BwNMl5Nqv2IBvVUs-9_038HrcazAALGIvl1bfksGRu1j79yXRH8O7iwIZxZXP7fQu7DLqBjdYqQZ0NREjfRDEAmXL8eWFhxcBo3EihFtP2Q5CXWZ84f1ZqIP8V_IFt4UCMJ2jF_K_yYEjmDVpgEY_Vuirw3tlW6ePmwu6wx8W3-b3CBdMLeJ72dpKIal6SAN9KJ8BdMOvrTVxkRnh_XJMke1SBpmAkZOzavW4fPreGYMGQr1SdFMACGIwdA3G4M996AEZNqtyX7cFeCS7LC022rYzW2Nvobf_ZqJHCrW3Myra9wU1X68=w687-h915-no\"\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"detect"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8d65746d-42bd-42f9-8719-1467e81d5f9e",
+			"name": "Face Verify",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"faceIds\": [\"5d355b49-b913-4764-b2a3-a1dd47f7f913\" ],\n\t\"personGroupId\": \"prueba\"\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/identify",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"identify"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "be74e15f-2882-4336-b989-e0616ad21d7a",
+			"name": "Person Group Create",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Grupo de prueba\",\r\n    \"userData\": \"user-provided data test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"persongroups",
+						"prueba"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ad2ce08e-99b3-42f7-8864-f289080a4d26",
+			"name": "Person Group Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Grupo de prueba\",\r\n    \"userData\": \"user-provided data test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"persongroups",
+						"prueba"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "96a4f650-3bcd-429a-8d2b-8e3d7ae578e9",
+			"name": "Person Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Wilmer Córdoba\",\r\n    \"userData\": \"987654321\"\r\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"persongroups",
+						"prueba",
+						"persons"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a1858c43-4899-41ad-a2db-54bafef8901a",
+			"name": "Person Train",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/train",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"persongroups",
+						"prueba",
+						"train"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "63c33259-f40e-43cd-8f21-1022d4254afb",
+			"name": "Person Add Face",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\": \"https://lh3.googleusercontent.com/E1iqSUHYvTZXfJpiS7aPkxaV4QCiHOYtNymZrbwKtcUwrtiXxtmz23hpEe5vxUfhAW93_Vz4c8yudGiSajo3vrC7i2JdY_3mSqr5BjcthJEgYLa6K8x4hiS2lKBsM-niOpkrh3IGx7j1BgkJwWrf4cDq3VsB0Rx_j1rCJrDUTyevSesC0lQAILqAZ4bFJkXZb9FUA-45YOg7BYyR_qBH8If41lzaPsPKeSh-i7xV49qMQ-BoFfpAdzXcIoulDnpxvc-NZZ0sNkoXJ9Pztv1O273SH_zj4YGmXlwz0JIZVpWgPsy4AmT8GlKIbJKCZkJg7HzU2wO81WHpY8nBceik7F66PIbWyX2iF5vxEJZg5L1_8N6irIqOpp-j1wmdMnG2jTzjaRVT_eTuehbLCCRxakH0f2PWdy1wgyGyFPaTBKstEUchjmwEYhwpSPHpXGG8s9wqlNHRmBYRMWWe6VzYPcbUNuQK_-Ucjqo1tNELvK6VL33Nd2oD0KnksyovyQXG8tzhPFQkQHf76_JvmqtsCkmyt4xgqEpX735lcIBnkrsklPlKiTJ8V1p0EdDknoglNcI8aHBjWNtsoNuu-XFfc12dpiI4bsHD-wetIE5v=w687-h915-no\"\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons/f4135abf-5487-4424-b6fb-985960398c49/persistedFaces",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"persongroups",
+						"prueba",
+						"persons",
+						"f4135abf-5487-4424-b6fb-985960398c49",
+						"persistedFaces"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f54a5a9a-e53b-42d2-8df4-37c242fc32e2",
+			"name": "Person Get List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Wilmer Córdoba\",\r\n    \"userData\": \"987654321\"\r\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"persongroups",
+						"prueba",
+						"persons"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3bdbd315-dac7-4593-9838-7db46a098306",
+			"name": "Person Get List Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "3553f13308154e67ae35c5a244fb6172"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personGroupId\": \"prueba\"\r\n}"
+				},
+				"url": {
+					"raw": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/identify",
+					"protocol": "https",
+					"host": [
+						"westcentralus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"identify"
+					]
+				},
+				"description": "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/prueba/persons"
+			},
+			"response": []
+		}
+	]
+}
