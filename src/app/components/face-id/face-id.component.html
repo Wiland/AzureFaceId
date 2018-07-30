@@ -1,0 +1,28 @@
+<!-- <div id="app">
+    <div><video #video id="video" width="640" height="480" autoplay></video></div>
+    <div><button id="snap" (click)="capture()">Snap Photo</button></div>
+    <canvas #canvas id="canvas" width="640" height="480"></canvas>
+    <ul>
+        <li *ngFor="let c of captures">
+            <img src="{{ c }}" height="50" />
+        </li>
+    </ul>
+</div> -->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <form>
+                <div class="form-group">
+                    <label for="photoUrl">URL de la imagen</label>
+                    <input [(ngModel)]="service.url" type="url" class="form-control" name="url" id="photoUrl" placeholder="Ingrese la URL">
+                </div>
+                <div class="form-group">
+                    <label for="personGroup">Grupo de personas</label>
+                    <input [(ngModel)]="service.personGroup" type="text" name="person" class="form-control" id="personGroup" value="prueba">
+                </div>
+                <button type="button" (click)="verify()" class="btn btn-primary">Verificar</button>
+            </form>
+        </div>
+    </div>
+</div>
